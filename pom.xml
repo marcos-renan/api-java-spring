@@ -11,8 +11,8 @@
 	<groupId>br.com.marcos</groupId>
 	<artifactId>api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>API</name>
+	<description>Api do curso Spring Boot Especialista.</description>
 	<url/>
 	<licenses>
 		<license/>
