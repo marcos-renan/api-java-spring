@@ -4,6 +4,7 @@ import br.com.marcos.api.model.Produto;
 import br.com.marcos.api.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -27,6 +28,11 @@ public class ProdutoController {
         return produto;
     }
 
+    @GetMapping
+    public List<Produto> buscar(@RequestParam("nome") String nome) {
+        return produtoRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
     @GetMapping("/{id}")
     public Produto buscarPorId(@PathVariable("id") String id){
 
@@ -46,7 +52,7 @@ public class ProdutoController {
      }
 
     @DeleteMapping("/{id}")
-    public void deletarProduto(@PathVariable("id") String id){
+    public void deletar(@PathVariable("id") String id){
         produtoRepository.deleteById(id);
     }
 }
