@@ -37,4 +37,9 @@ public class ProdutoController {
         //metodo otimizado
         return produtoRepository.findById(id).orElse(null);
     }
+
+    @DeleteMapping("/{id}")
+    public void deletarProduto(@PathVariable("id") String id){
+        produtoRepository.deleteById(id);
+    }
 }
